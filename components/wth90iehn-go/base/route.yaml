@@ -1,0 +1,18 @@
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata: 
+  labels: 
+    app.kubernetes.io/instance: wth90iehn-go
+    app.kubernetes.io/managed-by: kustomize
+    app.kubernetes.io/name: wth90iehn-go 
+  name: wth90iehn-go
+spec:
+  port:
+    targetPort: 8081 
+  tls:
+    insecureEdgeTerminationPolicy: Redirect
+    termination: edge
+  to:
+    kind: Service
+    name: wth90iehn-go
+    weight: 100 
